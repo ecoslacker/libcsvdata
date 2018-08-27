@@ -7,7 +7,10 @@ This is a common library in the irriapps project (<http://www.irriapps.com>) and
 
 This project was created in C++ using `cmake`. To compile this project you can use the following instructions:
 
-1. Clone the project from <https://github.com/ecoslacker/libcsvdata.git> ```git clone https://github.com/ecoslacker/libcsvdata.git```
+1. Clone the project from <https://github.com/ecoslacker/libcsvdata.git>.
+```
+git clone https://github.com/ecoslacker/libcsvdata.git
+```
 
 2. Create a build directory, it maybe called whatever you want:
 
@@ -16,25 +19,21 @@ mkdir lib && cd lib
 ```
 
 3. Run cmake, in Unix-like systems:
-
 ```
 cmake .. -G "Unix Makefiles"
 ```
 
 On Windows `nmake` is recommended instead of `mingw32-make` because there might be some errors related to the `gcc` compiler.
-
 ```
 cmake .. -G "NMake Makefiles"
 ```
 
 4. Compile, on Unix-like systems:
-
 ```
 make
 ```
 
 On Windows:
-
 ```
 nmake
 ```
