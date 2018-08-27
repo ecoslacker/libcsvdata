@@ -5,13 +5,9 @@ This is a common library in the irriapps project (<http://www.irriapps.com>) and
 
 ## Compiling
 
-This project was created in C++ using `cmake`. To compile this project you can use the following instrunctions:
+This project was created in C++ using `cmake`. To compile this project you can use the following instructions:
 
-1. Clone the project from <https://github.com/ecoslacker/libcsvdata.git>
-
-```
-git clone https://github.com/ecoslacker/libcsvdata.git
-```
+1. Clone the project from <https://github.com/ecoslacker/libcsvdata.git> ```git clone https://github.com/ecoslacker/libcsvdata.git```
 
 2. Create a build directory, it maybe called whatever you want:
 
