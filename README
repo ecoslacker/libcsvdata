@@ -21,8 +21,8 @@ use the following instructions:
 
         $ git clone https://github.com/ecoslacker/libcsvdata.git
 
-2. Create a build directory, it maybe called whatever you want. In this
-   example its called 'lib':
+2. Create a build directory, it may be called whatever you want. In this
+   example it's called `lib`:
 
         $ mkdir lib && cd lib
 
@@ -30,10 +30,12 @@ use the following instructions:
 
         $ cmake .. -G "Unix Makefiles"
 
-  On Windows, Visual Studio 'nmake' is recommended instead of 'mingw32-make'
-  because there might be some errors related to the 'gcc' compiler.
+  On Windows, Visual Studio `nmake` is recommended instead of `mingw32-make`
+  because there might be some errors related to the `gcc` compiler.
 
         > cmake .. -G "NMake Makefiles"
+
+  On Windows, DLL and LIB files will be created.
 
 4. Compile, on Unix-like systems:
 
@@ -42,6 +44,37 @@ use the following instructions:
   On Windows:
 
         > nmake
+
+====== Usage ======
+
+This library can be used as any other third party library, so you need to
+include the header `csvdata.h` in your code. Then the functions can be used
+as follow. To read a CSV file:
+
+        char delimiter = ',';
+        std::vector<std::vector<std::string> > input_data;
+        CsvData::parseFromFile("path/to/filename.csv", input_data, delimiter);
+
+The delimited data will be places as strings in the `input_data` variable. In
+this file, each line is a vector of strings, and all lines are in a single
+vector.
+
+To write a CSV file the sintax is similar:
+
+        CsvData::write("path/to/filename.csv", out_data, delimiter);
+
+Where the variable `out_data` is a vector where each line is a vector of
+strings and delimiter is a char type.
+
+Example using the library in a Qt project:
+
+You can use the `Add Library` tool to add it as any other third party libary.
+This will add a block of code in your `.pro` file, similar to this:
+
+        unix|win32: LIBS += -L$$PWD/path/to/your/lib/build/ -lcsvdata
+        INCLUDEPATH += $$/path/to/your/lib/include
+        DEPENPATH += $$/path/to/your/lib/include
+
 
 ====== Where to get it ======
 
